@@ -1,0 +1,45 @@
+CREATE CONSTRAINT group_id_unique
+ON (n:Group)
+ASSERT n.id IS UNIQUE
+
+CREATE CONSTRAINT person_id_unique
+ON (n:Person)
+ASSERT n.id IS UNIQUE
+
+CREATE (GroupA:Group {id: 'GroupA', name:'GroupA'})
+CREATE (GroupB:Group {id: 'GroupB', name:'GroupB'})
+CREATE (GroupC:Group {id: 'GroupC', name:'GroupC'})
+CREATE (GroupD:Group {id: 'GroupD', name:'GroupD'})
+
+CREATE (PaulBlythe:Person {id: 'PaulBlythe', name:'Paul Blythe'})
+CREATE (AngelaScope:Person {id: 'AngelaScope', name:'Angela Scope'})
+CREATE (JessicaThompson:Person {id: 'JessicaThompson', name:'Jessica Thompson'})
+CREATE (JamesThompson:Person {id: 'JamesThompson', name:'James Thompson'})
+CREATE (Taro:Person {id: 'Taro', name:'Taro'})
+CREATE (Hanako:Person {id: 'Hanako', name:'Hanako'})
+CREATE (Siga:Person {id: 'Siga', name:'Siga'})
+CREATE (Junichi:Person {id: 'Junichi', name:'Junichi'})
+
+CREATE
+(JamesThompson)-[:LIKE]->(JessicaThompson),
+(AngelaScope)-[:LIKE]->(JessicaThompson),
+(PaulBlythe)-[:LIKE]->(AngelaScope),
+(Taro)-[:LIKE]->(JessicaThompson),
+(Hanako)-[:LIKE]->(JessicaThompson),
+(Siga)-[:LIKE]->(AngelaScope),
+(Junichi)-[:LIKE]->(AngelaScope)
+
+CREATE
+(PaulBlythe)-[:BELONG]->(GroupA),
+(AngelaScope)-[:BELONG]->(GroupA),
+(JessicaThompson)-[:BELONG]->(GroupA),
+(JamesThompson)-[:BELONG]->(GroupB),
+(Taro)-[:BELONG]->(GroupB),
+(Hanako)-[:BELONG]->(GroupB),
+(Siga)-[:BELONG]->(GroupC),
+(Junichi)-[:BELONG]->(GroupC)
+
+MATCH (from:Person),(to:Person)
+WHERE from.id = 'Junichi' AND to.id = 'Siga'
+CREATE (from)-[:LIKE]->(to)
+
