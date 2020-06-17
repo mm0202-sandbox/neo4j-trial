@@ -15,7 +15,8 @@ Community、Enterpirse、Aura(DBaaS)の３タイプ
 * create databaseとかできない。dockerでアプリごとにコンテナ建てるとかで対応。
 * 表示時に区分けできるような"テーブルっぽい"ものはあり
 * ユーザ追加や権限設定もなさげ？
-* 管理者以外はアプリ経由で利用みたいな感じ？
+    * 管理者以外は別アプリ経由で利用みたいな感じ？
+    * 変更権限なども別アプリで処理が必要？
 
 #### Enterpirse
 ##### Commercial License
