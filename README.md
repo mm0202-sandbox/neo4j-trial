@@ -1,10 +1,5 @@
 # neo4j-trial
 
-## links
-- https://hub.docker.com/_/neo4j
-- https://neo4j.com/docs/getting-started/4.0/
-- https://neo4j.com/docs/driver-manual/4.0/get-started/#driver-get-started-about
-
 ## memo
 ※ 以下、情報まとめ。正確ではないので参考程度で
 
@@ -47,3 +42,8 @@ Community、Enterpirse、Aura(DBaaS)の３タイプ
 * Java
 * JavaScript
 * Python
+
+## links
+- https://hub.docker.com/_/neo4j
+- https://neo4j.com/docs/getting-started/4.0/
+- https://neo4j.com/docs/driver-manual/4.0/get-started/#driver-get-started-about
